@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit-Bold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit-Light.ttf");
+  font-weight: 300;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit";
+  color: #ededed;
+}
+
+h2 {
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+h3 {
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+html body {
+  height: 100%;
+  width: 100%;
+  background-color: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+html body .semesters {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+html body .semesters .semester {
+  background-color: #2b2b2b;
+  padding: 20px 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+}
+html body .semesters .semester .bar_graph {
+  height: 150px;
+  border-left: 2px solid #b4b4b4;
+  border-bottom: 2px solid #b4b4b4;
+  padding: 0px 10px;
+  display: flex;
+  align-items: last baseline;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+html body .semesters .semester .bar_graph .markers {
+  position: absolute;
+  height: 100%;
+  width: 8px;
+  right: 100%;
+  top: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+html body .semesters .semester .bar_graph .markers .marker {
+  width: 100%;
+  border: 1px solid #b4b4b4;
+}
+html body .semesters .semester .bar_graph .bar {
+  width: 30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #3849db;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+html body .semesters .semester .bar_graph .bar:hover {
+  border: 1px solid #b4b4b4;
+}
+html body .semesters .semester .bar_graph .bar .tooltip {
+  position: absolute;
+  z-index: 3;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  bottom: 113%;
+  background-color: #686868;
+  text-wrap: nowrap;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #b4b4b4;
+}
+html body .semesters .semester .bar_graph .bar .tooltip::after {
+  position: absolute;
+  content: "";
+  z-index: inherit;
+  height: 30%;
+  aspect-ratio: 1/1;
+  border-right: 1px solid #b4b4b4;
+  border-bottom: 1px solid #b4b4b4;
+  background-color: inherit;
+  transform: rotateZ(45deg);
+  bottom: -23%;
+}/*# sourceMappingURL=styles.css.map */

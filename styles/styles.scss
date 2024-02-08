@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit-Bold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("../fonts/Kanit/Kanit-Light.ttf");
+  font-weight: 300;
+}
+$white: #ededed;
+$dark-white: #b4b4b4;
+$black: #141414;
+$dar-gray: #2b2b2b;
+$light-gray: #686868;
+$blue: #3849db;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit";
+  color: $white;
+}
+h2 {
+  text-transform: capitalize;
+  font-weight: 400;
+}
+h3 {
+  text-transform: capitalize;
+  font-weight: 400;
+}
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: $black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .semesters {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      .semester {
+        background-color: $dar-gray;
+        padding: 20px 30px;
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+
+        .bar_graph {
+          height: 150px;
+          // border: 1px solid $dark-white;
+          border-left: 2px solid $dark-white;
+          border-bottom: 2px solid $dark-white;
+          padding: 0px 10px;
+
+          display: flex;
+          align-items: last baseline;
+          justify-content: center;
+          gap: 10px;
+
+          position: relative;
+          .markers {
+            // border: 1px solid $dark-white;
+            position: absolute;
+            height: 100%;
+            width: 8px;
+            right: 100%;
+            top: 1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .marker {
+              width: 100%;
+              border: 1px solid $dark-white;
+            }
+          }
+
+          .bar {
+            width: 30px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: $blue;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            &:hover {
+              border: 1px solid $dark-white;
+            }
+
+            position: relative;
+            .tooltip {
+              position: absolute;
+              z-index: 3;
+              display: none;
+              flex-direction: column;
+              align-items: center;
+              width: fit-content;
+              bottom: 113%;
+
+              background-color: $light-gray;
+              text-wrap: nowrap;
+              font-size: 12px;
+              padding: 5px 10px;
+              border-radius: 5px;
+              border: 1px solid $dark-white;
+              &::after {
+                position: absolute;
+                content: "";
+                z-index: inherit;
+                height: 30%;
+                aspect-ratio: 1/1;
+                border-right: 1px solid $dark-white;
+                border-bottom: 1px solid $dark-white;
+                background-color: inherit;
+                transform: rotateZ(45deg);
+                bottom: -23%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
